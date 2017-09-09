@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Furbook;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,6 +10,6 @@ class Cat extends Model
 
     public function breed()
     {
-        return $this->belongsTo('App\Breed');
+        return $this->belongsTo('Furbook\Breed');
     }
 }
