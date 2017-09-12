@@ -11,7 +11,7 @@
 @section('content')
   @foreach( $cats as  $cat )
     <div>
-      <a href="#"><strong>{{ $cat->name }}</strong></a>
+      <a href="{{ url('cats/' . $cat->id) }}"><strong>{{ $cat->name }}</strong> - {{ $cat->breed->name }}</a>
     </div>
   @endforeach
 @stop
