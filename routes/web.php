@@ -27,3 +27,5 @@ Route::get('cats/{cat}/edit', 'CatController@edit');
 Route::put('cats/{cat}', 'CatController@update');
 Route::get('/cats/{cat}', 'CatController@show');
 Route::get('cats/{cat}/delete', 'CatController@delete');
+
+Route::resource('photos', 'PhotoController');
