@@ -27,9 +27,9 @@ class EventServiceProvider extends ServiceProvider
     public function boot()
     {
         parent::boot();
-        Cat::created(function(){
-          dd('da luu cat vao db');
-        });
+        // Cat::created(function(){
+        //   dd('da luu cat vao db');
+        // });
         //
     }
 }

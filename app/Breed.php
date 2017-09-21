@@ -10,6 +10,6 @@ class Breed extends Model
 
     public function cats()
     {
-        return $this->hasMany('Furbook\Cat');
+        return $this->hasMany('Furbook\Cat', 'breed_id', 'id');
     }
 }

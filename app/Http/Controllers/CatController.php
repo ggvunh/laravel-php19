@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Furbook\Cat;
 use Furbook\Breed;
 use Illuminate\Support\Facades\Input;
+use Auth;
+use Furbook\Http\Requests\CreateCatRequest;
 
 
 class CatController extends Controller
@@ -42,9 +44,14 @@ class CatController extends Controller
       return view('cats.create', compact('breeds'));
     }
 
-    public function save()
+    public function save(CreateCatRequest $request)
     {
-      $data = Input::all();
+      $data = $request->all();
+
+      if (Auth::check()) {
+          $data['user_id'] = Auth::id();
+      }
+
       $cat = Cat::create($data);
       return redirect('/cats/' . $cat->id)->withSuccess('Cat has been created');
     }

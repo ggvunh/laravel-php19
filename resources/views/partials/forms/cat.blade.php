@@ -3,6 +3,11 @@
   <div class="form-controls">
     {!! Form::text('name', null, ['class' => 'form-control']) !!}
   </div>
+  @if ( $errors->has('name') )
+    <span class="text-warning">
+        <strong> {{ $errors->first('name') }}</strong>
+    </span>
+  @endif
 </div>
 
 <div class="form-group">
@@ -10,6 +15,11 @@
   <div class="form-controls">
     {!! Form::date('date_of_birth', null, ['class' => 'form-control']) !!}
   </div>
+  @if ( $errors->has('date_of_birth') )
+    <span class="text-warning">
+        <strong> {{ $errors->first('date_of_birth') }}</strong>
+    </span>
+  @endif
 </div>
 
 <div class="form-group">
