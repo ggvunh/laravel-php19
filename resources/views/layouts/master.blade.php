@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Laravel 19</title>
     <link rel="stylesheet" href="{{asset('/css/bootstrap.min.css')}}">
+    <script src="{{asset('/js/jquery-3.2.1.min.js')}}"></script>
   </head>
   <body>
     <div class="container">

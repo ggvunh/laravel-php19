@@ -40,3 +40,8 @@ Route::get('/getUsers', function(){
   $currentUser = Auth::user();
   dd($currentUser);
 });
+
+Route::resource('categories', 'CategoryController');
+Route::get('/ajax', function() {
+  return view('ajax');
+});
