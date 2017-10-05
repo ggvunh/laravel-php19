@@ -13,4 +13,9 @@ class Product extends Model
 	{
 		return Product::save($data);
 	}
+
+	public function delete()
+	{
+		return $this->delete();
+	}
 }
