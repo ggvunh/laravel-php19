@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Product extends Model
 {
 	protected $table = 'products';
+
+	public function save($data)
+	{
+		return Product::save($data);
+	}
 }
