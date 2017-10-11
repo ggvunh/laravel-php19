@@ -25,7 +25,7 @@ Route::get('cats/create', 'CatController@create');
 Route::post('cats', 'CatController@save');
 Route::get('cats/{cat}/edit', 'CatController@edit');
 Route::put('cats/{cat}', 'CatController@update');
-Route::get('/cats/{cat}', 'CatController@show')->middleware(['auth', 'isAdmin']);
+Route::get('/cats/{cat}', 'CatController@show');
 Route::get('cats/{cat}/delete', 'CatController@delete');
 
 Route::resource('photos', 'PhotoController');

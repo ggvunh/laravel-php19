@@ -8,6 +8,7 @@ use Furbook\Breed;
 use Illuminate\Support\Facades\Input;
 use Auth;
 use Furbook\Http\Requests\CreateCatRequest;
+use Toastr;
 
 
 class CatController extends Controller
@@ -53,6 +54,7 @@ class CatController extends Controller
       }
 
       $cat = Cat::create($data);
+      Toastr::success('Toa meo thanh cong', $title = null, $options = []);
       return redirect('/cats/' . $cat->id)->withSuccess('Cat has been created');
     }
 
@@ -77,6 +79,7 @@ class CatController extends Controller
     public function delete(Cat $cat)
     {
       $cat->delete();
+      Toastr::success('Da xoa thanh cong', $title = null, $options = []);
       return redirect('/cats')->withSuccess('Cat has been delete');
     }
 }

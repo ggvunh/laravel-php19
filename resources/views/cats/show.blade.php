@@ -4,10 +4,8 @@
   <h2>
     {{ $cat->name }}
   </h2>
-  @if (Auth::check() && Auth::user()->canEdit($cat))
     <a href="{{ url('cats/' . $cat->id . '/edit') }}" class="glyphicon glyphicon-edit">Edit</a>
     <a href="{{ url('cats/' . $cat->id . '/delete') }}" class="glyphicon glyphicon-delete">Delete</a>
-  @endif
   <p>Last edited: {{ $cat->updated_at->diffForHumans() }}</p>
 @stop
 

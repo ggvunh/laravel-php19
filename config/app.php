@@ -177,6 +177,7 @@ return [
         Furbook\Providers\EventServiceProvider::class,
         Furbook\Providers\RouteServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        Kamaln7\Toastr\ToastrServiceProvider::class,
 
 
     ],
@@ -229,6 +230,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'Toastr' => Kamaln7\Toastr\Facades\Toastr::class,
 
     ],
 

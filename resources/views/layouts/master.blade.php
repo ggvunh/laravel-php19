@@ -5,8 +5,12 @@
     <title>Laravel 19</title>
     <link rel="stylesheet" href="{{asset('/css/bootstrap.min.css')}}">
     <script src="{{asset('/js/jquery-3.2.1.min.js')}}"></script>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
   </head>
   <body>
+    {!! Toastr::render() !!}
     <div class="container">
       <div class="page-header">
         @yield('header')
