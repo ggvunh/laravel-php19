@@ -47,7 +47,20 @@ class CatController extends Controller
 
     public function save(CreateCatRequest $request)
     {
+
       $data = $request->all();
+
+      // if ($request->hasFile('image') )
+      // {
+      //     $file = $request->file('image');
+      //     $filename = $file->getClientOriginalName(); 
+      //     $images = time(). "_" . $filename;
+      //     $destinationPath = public_path('/upload');
+      //     $file->move($destinationPath, $images);
+      //     $data['image'] = $images;
+      // } else {
+      //   $data['image'] = '';
+      // }
 
       if (Auth::check()) {
           $data['user_id'] = Auth::id();

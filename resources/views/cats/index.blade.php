@@ -5,9 +5,7 @@
   @endif
   <h2>
      All  @if(isset($breed)) {{ $breed->name }} @endif cats
-     @if (Auth::check())
-        <a href="{{'cats/create'}}" class="btn btn-success pull-right">Add Cat</a>
-     @endif
+    <a href="{{'cats/create'}}" class="btn btn-success pull-right" onClick="showWating()">Add Cat</a>
   </h2>
 @stop
 @section('content')

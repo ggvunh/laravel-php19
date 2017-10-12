@@ -4,7 +4,7 @@
 @stop
 
 @section('content')
-  {!! Form::open(['url' => 'cats']) !!}
+  {!! Form::open(['url' => 'cats', 'enctype' => 'multipart/form-data']) !!}
     @include('partials.forms.cat')
   {!! Form::close() !!}
 @stop
