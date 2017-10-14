@@ -45,3 +45,16 @@ Route::resource('categories', 'CategoryController');
 Route::get('/ajax', function() {
   return view('ajax');
 });
+
+// load gio hang
+Route::get('/shop', 'ProductController@index');
+// add gio hang
+Route::get('/carts/{id}/add', 'CartController@add');
+// xoa toan bo gio hang
+Route::get('/carts/destroy', 'CartController@destroy');
+// checkout tinh toan gio hang
+Route::get('/checkout', 'CartController@checkout');
+// xoa 1 phan tu trong gio hang
+Route::get('/carts/{rowId}/delete', 'CartController@delete');
+
+Route::get('/loadCarts', 'CartController@loadCarts');
