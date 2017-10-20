@@ -28,5 +28,18 @@
     {!! Form::select('breed_id',$breeds , null, ['class' => 'form-control']) !!}
   </div>
 </div>
+<div class="form-group">
+  {!! Form::label('image', 'Image') !!}
+  <div class="form-controls">
+    {!! Form::file('image', ['onchange'=>"loadFile(event)"]) !!}
+  </div>
+  <img id="output"/>
+</div>
 
-{!! Form::submit('Save cat', ['class' => 'btn btn-primary']) !!}
+{!! Form::submit('Save cat', ['class' => 'btn btn-primary', 'onclick' =>'showWating()']) !!}
+<script>
+  var loadFile = function(event) {
+    var output = document.getElementById('output');
+    output.src = URL.createObjectURL(event.target.files[0]);
+  };
+</script>

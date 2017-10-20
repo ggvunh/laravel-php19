@@ -178,6 +178,8 @@ return [
         Furbook\Providers\RouteServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Aloha\Twilio\Support\Laravel\ServiceProvider::class,
+        Kamaln7\Toastr\ToastrServiceProvider::class,
+        Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class
 
 
     ],
@@ -231,6 +233,8 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Twilio' => Aloha\Twilio\Support\Laravel\Facade::class,
+        'Toastr' => Kamaln7\Toastr\Facades\Toastr::class,
+        'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
 
     ],
 

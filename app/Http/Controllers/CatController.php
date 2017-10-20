@@ -8,7 +8,11 @@ use Furbook\Breed;
 use Illuminate\Support\Facades\Input;
 use Auth;
 use Furbook\Http\Requests\CreateCatRequest;
+<<<<<<< HEAD
 use Twilio;
+=======
+use Toastr;
+>>>>>>> fe2adeb12c792d73e312a17d533573b77614c8fc
 
 
 class CatController extends Controller
@@ -47,13 +51,27 @@ class CatController extends Controller
 
     public function save(CreateCatRequest $request)
     {
+
       $data = $request->all();
+
+      // if ($request->hasFile('image') )
+      // {
+      //     $file = $request->file('image');
+      //     $filename = $file->getClientOriginalName(); 
+      //     $images = time(). "_" . $filename;
+      //     $destinationPath = public_path('/upload');
+      //     $file->move($destinationPath, $images);
+      //     $data['image'] = $images;
+      // } else {
+      //   $data['image'] = '';
+      // }
 
       if (Auth::check()) {
           $data['user_id'] = Auth::id();
       }
 
       $cat = Cat::create($data);
+      Toastr::success('Toa meo thanh cong', $title = null, $options = []);
       return redirect('/cats/' . $cat->id)->withSuccess('Cat has been created');
     }
 
@@ -78,6 +96,7 @@ class CatController extends Controller
     public function delete(Cat $cat)
     {
       $cat->delete();
+      Toastr::success('Da xoa thanh cong', $title = null, $options = []);
       return redirect('/cats')->withSuccess('Cat has been delete');
     }
 }

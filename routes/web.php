@@ -25,7 +25,7 @@ Route::get('cats/create', 'CatController@create');
 Route::post('cats', 'CatController@save');
 Route::get('cats/{cat}/edit', 'CatController@edit');
 Route::put('cats/{cat}', 'CatController@update');
-Route::get('/cats/{cat}', 'CatController@show')->middleware(['auth', 'isAdmin']);
+Route::get('/cats/{cat}', 'CatController@show');
 Route::get('cats/{cat}/delete', 'CatController@delete');
 
 Route::resource('photos', 'PhotoController');
@@ -66,3 +66,15 @@ Route::get('/push-noti', function(){
     $pusher->trigger('hotel', 'booking', $data);
     echo 'thanh cong';
 });
+// load gio hang
+Route::get('/shop', 'ProductController@index');
+// add gio hang
+Route::get('/carts/{id}/add', 'CartController@add');
+// xoa toan bo gio hang
+Route::get('/carts/destroy', 'CartController@destroy');
+// checkout tinh toan gio hang
+Route::get('/checkout', 'CartController@checkout');
+// xoa 1 phan tu trong gio hang
+Route::get('/carts/{rowId}/delete', 'CartController@delete');
+
+Route::get('/loadCarts', 'CartController@loadCarts');

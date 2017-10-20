@@ -3,6 +3,7 @@
 namespace Furbook;
 
 use Illuminate\Database\Eloquent\Model;
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends Model
@@ -24,4 +25,10 @@ class Product extends Model
 	{
 		return  $this->update();
 	}
+=======
+
+class Product extends Model
+{
+    //
+>>>>>>> fe2adeb12c792d73e312a17d533573b77614c8fc
 }
