@@ -5,6 +5,7 @@
     <title>Laravel 19</title>
     <link rel="stylesheet" href="{{asset('/css/bootstrap.min.css')}}">
     <script src="{{asset('/js/jquery-3.2.1.min.js')}}"></script>
+    <script src="{{asset('/js/bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js')}}"></script>
   </head>
   <body>
     <div class="container">

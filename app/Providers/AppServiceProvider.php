@@ -20,7 +20,7 @@ class AppServiceProvider extends ServiceProvider
         // cach thu 2 de share bien trong view
         // $breeds = Breed::all()->pluck('name', 'id');
         // View::share('breeds', $breeds);
-        $view->composer('*', 'Furbook\Http\Views\Composers\CatFormComposer');
+        // $view->composer('*', 'Furbook\Http\Views\Composers\CatFormComposer');
 
     }
 

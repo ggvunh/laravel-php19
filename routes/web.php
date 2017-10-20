@@ -45,3 +45,24 @@ Route::resource('categories', 'CategoryController');
 Route::get('/ajax', function() {
   return view('ajax');
 });
+
+Route::get('/noti', function(){
+  return view('about');
+});
+
+Route::get('/push-noti', function(){
+    $options = array(
+      'cluster' => 'ap1',
+      'encrypted' => true
+    );
+    $pusher = new Pusher\Pusher(
+      '7e60769bc3587cde5ee2',
+      '8d0661694c63ce3b2de8',
+      '410811',
+      $options
+    );
+
+    $data['message'] = 'vua co mot booking moi';
+    $pusher->trigger('hotel', 'booking', $data);
+    echo 'thanh cong';
+});

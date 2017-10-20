@@ -8,13 +8,14 @@ use Furbook\Breed;
 use Illuminate\Support\Facades\Input;
 use Auth;
 use Furbook\Http\Requests\CreateCatRequest;
+use Twilio;
 
 
 class CatController extends Controller
 {
-    public function home()
+    public function testSMS()
     {
-      return redirect('/cats');
+      Twilio::message('+84905698207', 'You Have Just Make Booking Hotel Code: 090947');
     }
 
     public function getCats()
